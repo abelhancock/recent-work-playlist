@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Include Amplitude JS -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/amplitudejs@5.0.2/dist/amplitude.js"
@@ -12,106 +11,110 @@
   <body>
     <div id="amplitude-player">
       <img data-amplitude-song-info="cover_art_url" class="album-art" />
-
-      <div id="amplitude-right">
+      <div
+        class="amplitude-song-container"
+        data-amplitude-song-index="0"
+        data-amplitude-playlist="recent_work"
+      >
         <div
-          class="song amplitude-song-container"
+          class="amplitude-play-pause"
           data-amplitude-song-index="0"
+          data-amplitude-playlist="recent_work"
         >
-          <div
-            class="amplitude-play-pause"
+          <button class="play-button"></button>
+          <span
+            class="song-title"
+            data-amplitude-song-info="name"
             data-amplitude-song-index="0"
             data-amplitude-playlist="recent_work"
-          ></div>
+          ></span>
 
-          <div class="song-meta-data">
-            <span
-              class="song-title"
-              data-amplitude-song-info="name"
-              data-amplitude-song-index="0"
-              data-amplitude-playlist="recent_work"
-            ></span>
-            <span
-              class="amplitude-current-time"
-              data-amplitude-playlist="recent_work"
-              data-amplitude-song-index="0"
-            ></span>
-
-            <span class="song-duration">3:30</span>
-          </div>
-
-          <div id="progress-container">
-            <input
-              type="range"
-              class="amplitude-song-slider"
-              data-amplitude-song-index="0"
-              data-amplitude-playlist="recent_work"
-            />
-            <progress
-              id="song-played-progress"
-              class="amplitude-song-played-progress"
-              data-amplitude-song-index="0"
-              data-amplitude-playlist="recent_work"
-            ></progress>
-            <progress
-              id="song-buffered-progress"
-              class="amplitude-buffered-progress"
-              value="0"
-              data-amplitude-song-index="0"
-              data-amplitude-playlist="recent_work"
-            ></progress>
-          </div>
+          <span class="song-duration">3:30</span>
         </div>
-        <div
-          class="song amplitude-song-container"
-          data-amplitude-song-index="1"
-        >
-          <div
-            class="amplitude-play-pause"
-            data-amplitude-song-index="1"
+
+        <div id="progress-container">
+          <progress
+            id="song-buffered-progress"
+            class="amplitude-buffered-progress"
+            value="0"
+            data-amplitude-song-index="0"
             data-amplitude-playlist="recent_work"
-          ></div>
-          <div class="song-meta-data">
-            <span
-              class="song-title"
-              data-amplitude-song-info="name"
-              data-amplitude-song-index="1"
-              data-amplitude-playlist="recent_work"
-            ></span>
-            <span
-              class="amplitude-current-time"
-              data-amplitude-playlist="recent_work"
-              data-amplitude-song-index="1"
-            ></span>
-            <span class="song-duration">3:16</span>
-          </div>
-          <div id="progress-container">
-            <input
-              type="range"
-              class="amplitude-song-slider"
-              data-amplitude-song-index="1"
-              data-amplitude-playlist="recent_work"
-            />
-            <progress
-              id="song-played-progress"
-              class="amplitude-song-played-progress"
-              data-amplitude-song-index="1"
-              data-amplitude-playlist="recent_work"
-            ></progress>
-            <progress
-              id="song-buffered-progress"
-              class="amplitude-buffered-progress"
-              value="0"
-              data-amplitude-song-index="1"
-              data-amplitude-playlist="recent_work"
-            ></progress>
-          </div>
+          ></progress>
+          <progress
+            id="song-played-progress"
+            class="amplitude-song-played-progress"
+            data-amplitude-song-index="0"
+            data-amplitude-playlist="recent_work"
+          ></progress>
+          <input
+            tabindex="-1"
+            type="range"
+            class="amplitude-song-slider"
+            data-amplitude-song-index="0"
+            data-amplitude-playlist="recent_work"
+          />
+          <time
+            id="song-current-time"
+            class="amplitude-current-time"
+            data-amplitude-song-index="0"
+            data-amplitude-playlist="recent_work"
+          ></time>
         </div>
       </div>
+      <div
+        class="amplitude-song-container"
+        data-amplitude-song-index="1"
+        data-amplitude-playlist="recent_work"
+      >
+        <div
+          class="amplitude-play-pause"
+          data-amplitude-song-index="1"
+          data-amplitude-playlist="recent_work"
+        >
+          <button class="play-button"></button>
+          <span
+            class="song-title"
+            data-amplitude-song-info="name"
+            data-amplitude-song-index="1"
+            data-amplitude-playlist="recent_work"
+          ></span>
 
-      <!-- End Right Side Player -->
+          <span class="song-duration">3:16</span>
+        </div>
+
+        <div id="progress-container">
+          <progress
+            id="song-buffered-progress"
+            class="amplitude-buffered-progress"
+            value="0"
+            data-amplitude-song-index="1"
+            data-amplitude-playlist="recent_work"
+          ></progress>
+          <progress
+            id="song-played-progress"
+            class="amplitude-song-played-progress"
+            data-amplitude-song-index="1"
+            data-amplitude-playlist="recent_work"
+          ></progress>
+          <input
+            tabindex="-1"
+            type="range"
+            class="amplitude-song-slider"
+            data-amplitude-song-index="1"
+            data-amplitude-playlist="recent_work"
+          />
+          <time
+            id="song-current-time"
+            class="amplitude-current-time"
+            data-amplitude-song-index="1"
+            data-amplitude-playlist="recent_work"
+          ></time>
+        </div>
+      </div>
     </div>
-    <!-- End Amplitdue Player -->
-    <script type="text/javascript" src="init.js"></script> 
+    <script
+      type="text/javascript"
+      src="init.js"
+    ></script>
   </body>
 </html>

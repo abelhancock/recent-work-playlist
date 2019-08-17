@@ -1,0 +1,175 @@
+//temp
+@font-face {
+  font-family: 'Hancockaudiosans';
+  src: url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee2108a968accd1dc9_hancockaudioSans.woff') format('woff'), url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee48a5b37ed624e1e7_hancockaudioSans.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hancockaudioserif';
+  src: url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee326ec17c3443e838_hancockaudioSerif.woff') format('woff'), url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee8620ae707042b19c_hancockaudioSerif.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  width: 50%;
+  margin-left: auto;
+}
+//end temp
+//variables 
+$orange: #ee8d0f;
+$black: #2d2a26;
+$white: #ece2d4;
+//end variables
+#amplitude-player {
+  position: relative;
+}
+.album-art {
+  max-width: 50vw;
+  max-height: 80vh;
+  position: absolute;
+  left: -40vw;
+  z-index: -1;
+}
+.amplitude-song-container {
+  padding: 24px 0;
+}
+.amplitude-play-pause {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  .play-button {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 37.976V16.024a1 1 0 0 1 1.607-.795l14.354 10.977a1 1 0 0 1 0 1.588L21.608 38.771A1 1 0 0 1 20 37.976z' fill='%232D2A26'/%3E%3C/svg%3E");
+    background-color: transparent;
+    border: 1px solid $black;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    &:focus {
+      outline: none;
+      border-width: 2px;
+    }
+  }
+  .song-title {
+    font-family: Hancockaudioserif, serif;
+    color: $black;
+    font-size: 26px;
+    line-height: 100%;
+    font-weight: 400;
+    padding: 0 1em;
+    margin-top: 0.3em;
+  }
+  .song-duration {
+    margin-left: auto;
+    font-family: Hancockaudioserif, serif;
+  }
+  &:hover {
+    .play-button {
+      border-color: $orange;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 37.976V16.024a1 1 0 0 1 1.607-.795l14.354 10.977a1 1 0 0 1 0 1.588L21.608 38.771A1 1 0 0 1 20 37.976z' fill='%23EE8D0F'/%3E%3C/svg%3E");
+    }
+    .song-title {
+      color: $orange;
+    }
+    .song-duration {
+      color: $orange;
+    }
+  }
+  &.amplitude-playing {
+    .play-button {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='20' y='16' width='5' height='22' rx='2.5' fill='%23EE8D0F'/%3E%3Crect x='29' y='16' width='5' height='22' rx='2.5' fill='%23EE8D0F'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+#progress-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  height: 5px;
+  pointer-events: none;
+  margin-top: 20px;
+  .amplitude-song-slider {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  #song-played-progress {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: .1s ease-in-out;
+  }
+  #song-played-progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  #song-played-progress::-webkit-progress-value {
+    background-color: $orange;
+    border-radius: 3px;
+    transition: .1s ease-in-out;
+  }
+  #song-buffered-progress {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  #song-buffered-progress::-webkit-progress-bar {
+    background-color: rgba(45, 42, 38, 0.1);
+  }
+  #song-buffered-progress::-webkit-progress-value {
+    background-color: $orange;
+  }
+  .amplitude-current-time {
+    font-family: Hancockaudiosans, sans-serif;
+    font-size: 12px;
+    background-color: $white;
+    padding: .5em;
+    position: absolute;
+    left: 0%;
+    top: 0;
+    transform: translate(0, -9.5px);
+    color: $orange;
+    opacity: 0;
+    transition: .1s ease-in-out;
+    pointer-events: none;
+  }
+  &:hover {
+    .amplitude-current-time {
+      opacity: 1;
+    }
+  }
+}
+.amplitude-active-song-container {
+  .play-button {
+    border-color: $orange;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 37.976V16.024a1 1 0 0 1 1.607-.795l14.354 10.977a1 1 0 0 1 0 1.588L21.608 38.771A1 1 0 0 1 20 37.976z' fill='%23EE8D0F'/%3E%3C/svg%3E");
+  }
+  .song-title {
+    color: $orange;
+  }
+  .song-duration {
+    color: $orange;
+  }
+  #progress-container {
+    opacity: 1;
+    pointer-events: unset;
+  }
+}
