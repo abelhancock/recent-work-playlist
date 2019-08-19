@@ -1,45 +1,57 @@
-/*temp
+// temp
 @font-face {
-  font-family: 'Hancockaudiosans';
-  src: url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee2108a968accd1dc9_hancockaudioSans.woff') format('woff'), url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee48a5b37ed624e1e7_hancockaudioSans.otf') format('opentype');
+  font-family: "Hancockaudiosans";
+  src: url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee2108a968accd1dc9_hancockaudioSans.woff")
+      format("woff"),
+    url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee48a5b37ed624e1e7_hancockaudioSans.otf")
+      format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Hancockaudioserif';
-  src: url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee326ec17c3443e838_hancockaudioSerif.woff') format('woff'), url('https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee8620ae707042b19c_hancockaudioSerif.otf') format('opentype');
+  font-family: "Hancockaudioserif";
+  src: url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee326ec17c3443e838_hancockaudioSerif.woff")
+      format("woff"),
+    url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee8620ae707042b19c_hancockaudioSerif.otf")
+      format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 body {
-  width: 50%;
-  margin-left: auto;
+  margin: 0;
+  padding: 6vw;
+  background: #ece2d4;
 }
-//end temp*/
-//variables 
+//end temp
+//variables
 $orange: #ee8d0f;
 $black: #2d2a26;
 $white: #ece2d4;
 //end variables
 #amplitude-player {
   position: relative;
+  width: 50%;
+  margin-left: auto;
 }
 .album-art {
-  max-width: 50vw;
-  max-height: 80vh;
-  position: absolute;
-  left: -40vw;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.album-art-blur {
+  filter: blur(3vw);
+  transform: scale(1.05);
 }
 .amplitude-song-container {
   padding: 24px 0;
 }
 .amplitude-play-pause {
   display: flex;
-  width: 100%;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+  padding: 1em 2em;
+  background: $white;
   .play-button {
     width: 54px;
     height: 54px;
@@ -72,6 +84,7 @@ $white: #ece2d4;
   .song-duration {
     margin-left: auto;
     font-family: Hancockaudioserif, serif;
+    color: $black;
   }
   &:hover {
     .play-button {
@@ -95,18 +108,19 @@ $white: #ece2d4;
 #progress-container {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
   opacity: 0;
   height: 5px;
   pointer-events: none;
-  margin-top: 20px;
+  transform: translateY(-100%);
+  width: 100%;
   .amplitude-song-slider {
     position: absolute;
     width: 100%;
     opacity: 0;
     cursor: pointer;
+    height: 5px;
+    margin: 0;
   }
   #song-played-progress {
     position: absolute;
@@ -114,15 +128,14 @@ $white: #ece2d4;
     height: 5px;
     -webkit-appearance: none;
     appearance: none;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
   #song-played-progress::-webkit-progress-bar {
     background-color: transparent;
   }
   #song-played-progress::-webkit-progress-value {
     background-color: $orange;
-    border-radius: 3px;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
   #song-buffered-progress {
     position: absolute;
@@ -139,16 +152,15 @@ $white: #ece2d4;
   }
   .amplitude-current-time {
     font-family: Hancockaudiosans, sans-serif;
-    font-size: 12px;
+    font-size: 8px;
     background-color: $white;
-    padding: .5em;
+    padding: 0.5em 0.5em 0 0.5em;
     position: absolute;
     left: 0%;
-    top: 0;
-    transform: translate(0, -12.5px);
+    bottom: 1px;
     color: $orange;
     opacity: 0;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
     pointer-events: none;
   }
   &:hover {
@@ -171,5 +183,12 @@ $white: #ece2d4;
   #progress-container {
     opacity: 1;
     pointer-events: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  #amplitude-player {
+    width: 100%;
+    margin-left: unset;
   }
 }
