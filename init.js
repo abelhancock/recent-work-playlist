@@ -1,52 +1,52 @@
 Amplitude.init({
   songs: [
     {
-      name: "W & G Wedding",
+      name: "JFTP",
       artist: "Abel Hancock",
-      album: "Recent Work",
+      album: "Voice Overs",
       url:
-        "https://github.com/abelhancock/recent-work-playlist/raw/master/audio/w-g-wedding.mp3",
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/audio/jftp.mp3",
       cover_art_url:
-        "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/images/jftp-artwork.jpg"
     },
     {
-      name: "The Gun",
-      artist: "Lorn",
-      album: "Ask The Dust",
-      url: "https://521dimensions.com/song/08 The Gun.mp3",
+      name: "Old Leviathan",
+      artist: "Abel Hancock",
+      album: "Voice Overs",
+      url: "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/audio/jftp-2.mp3",
       cover_art_url:
-        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/images/old-leviathan.jpg"
     },
     {
-      name: "The Gun 1",
-      artist: "Lorn",
-      album: "Ask The Dust",
-      url: "https://521dimensions.com/song/08 The Gun.mp3",
+      name: "Show Opener 1",
+      artist: "Abel Hancock",
+      album: "Trailers & Openers",
+      url: "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/audio/compel-opener-2016.mp3",
       cover_art_url:
-        "https://521dimensions.com/img/open-source/amplitudejs/album-art/ask-the-dust.jpg"
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/images/compel-opener-2016.jpg"
     },
     {
-      name: "The Gun 2",
-      artist: "Lorn",
-      album: "Ask The Dust",
-      url: "https://521dimensions.com/song/08 The Gun.mp3",
+      name: "Show Opener 2",
+      artist: "Abel Hancock",
+      album: "Trailers & Openers",
+      url: "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/audio/compel-opener-2017.mp3",
       cover_art_url:
-        "https://521dimensions.com/img/open-source/amplitudejs/album-art/ask-the-dust.jpg"
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/images/compel-opener-2017.jpg"
     },
     {
-      name: "The Gun 3",
-      artist: "Lorn",
-      album: "Ask The Dust",
-      url: "https://521dimensions.com/song/08 The Gun.mp3",
+      name: "Now. I. See.",
+      artist: "Abel Hancock",
+      album: "Voice Over",
+      url: "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/audio/now-i-see.mp3",
       cover_art_url:
-        "https://521dimensions.com/img/open-source/amplitudejs/album-art/ask-the-dust.jpg"
+        "https://raw.githubusercontent.com/abelhancock/recent-work-playlist/master/images/now-i-see.jpg"
     },
   ],
 
   playlists: {
     recent_work: {
       songs: [0, 1, 2, 3, 4],
-      title: "Best of Ancient Astronauts"
+      title: "Recent Work"
     }
   },
 
