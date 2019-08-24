@@ -76,10 +76,11 @@
     resize: none;
     font-size: 22px;
     height: 1em;
-    padding: 1em;
+    padding: 0 1em;
     position: relative;
     color: #ece2d4;
     font-family: Hancockaudiosans, Verdana, sans-serif;
+    line-height: 1em
   }
   input::placeholder,
   textarea::placeholder {
