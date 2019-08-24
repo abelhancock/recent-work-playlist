@@ -1,0 +1,191 @@
+/* @font-face {
+    font-family: "Hancockaudiosans";
+    src: url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee2108a968accd1dc9_hancockaudioSans.woff")
+        format("woff"),
+      url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee48a5b37ed624e1e7_hancockaudioSans.otf")
+        format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Hancockaudioserif";
+    src: url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee326ec17c3443e838_hancockaudioSerif.woff")
+        format("woff"),
+      url("https://uploads-ssl.webflow.com/5d4f19e3326ec1961a43dac0/5d4f1dee8620ae707042b19c_hancockaudioSerif.otf")
+        format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  } */
+#contact-form {
+  .form-all {
+    box-shadow: none;
+    width: 100%;
+    background: transparent;
+  }
+  .form-section {
+    padding: 0;
+    margin: 0;
+  }
+  .form-line {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(236, 226, 212, 0.4);
+    margin-bottom: 5em;
+    padding: 0 3em;
+  }
+  .form-line[data-type="control_button"] {
+    border: none;
+    padding: 0;
+  }
+  .form-label {
+    font-family: Hancockaudioserif, "Time New Roman", sans-serif;
+    color: #ece2d4;
+    font-weight: 400;
+    font-size: 3vw;
+    line-height: 1em;
+    margin: 0;
+  }
+  .form-required {
+    display: none;
+  }
+  .form-input {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .form-input span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ece2d4;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: bottom;
+    z-index: -1;
+  }
+  input,
+  textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 22px;
+    height: 1em;
+    padding: 1em;
+    position: relative;
+    color: #ece2d4;
+    font-family: Hancockaudiosans, Verdana, sans-serif;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #ece2d4;
+    opacity: 0.4;
+  }
+  input:focus,
+  textarea:focus,
+  input:valid,
+  textarea:valid {
+    color: #2d2a26;
+  }
+  input:focus + span,
+  textarea:focus + span,
+  input:valid + span,
+  textarea:valid + span {
+    transform: scaleY(1);
+  }
+  input:focus::placeholder,
+  textarea:focus::placeholder,
+  input:valid::placeholder,
+  textarea:valid::placeholder {
+    color: #2d2a26;
+    opacity: 0.5;
+  }
+  .form-buttons-wrapper {
+    position: relative;
+  }
+  button {
+    font-size: 3vw;
+    font-family: Hancockaudioserif, "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: #ece2d4;
+    cursor: pointer;
+    position: relative;
+    padding: 0 1em;
+    outline: none;
+    line-height: 1em;
+  }
+  button + span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ee8d0f;
+    height: 0.4em;
+    transition: 0.1s ease-in-out;
+    transform-origin: bottom;
+  }
+  button:focus + span,
+  button:hover + span {
+    transform: scaleY(3);
+  }
+  img {
+    display: none;
+  }
+  .form-button-error {
+    display: none;
+  }
+  input:focus + span + .form-error-message,
+  textarea:focus + span + .form-error-message {
+    opacity: 0;
+  }
+  .form-error-message {
+    color: #ee8d0f;
+    font-family: hancockaudiosans;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    padding: 1em 1em;
+    letter-spacing: 0.1em;
+    font-size: 22px;
+    pointer-events: none;
+  }
+  .form-line-error input::placeholder,
+  .form-line-error textarea::placeholder {
+    opacity: 0;
+  }
+
+  @media (max-width: 991px) {
+    .form-label,
+    button {
+      font-size: 5vw;
+    }
+    input,
+    textarea {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    .form-label,
+    button {
+      font-size: 7vw;
+    }
+    input,
+    textarea {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 479px) {
+    .form-label,
+    button {
+      font-size: 8vw;
+    }
+  }
+}
