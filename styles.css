@@ -20,10 +20,10 @@
 body {
   margin: 0;
   padding: 6vw;
-  background: #ece2d4;
+  background: .ece2d4;
 }
 //end temp */
-#amplitude-player, #amplitude-player-2 {
+.amplitude-player {
   position: relative;
 }
 
@@ -99,7 +99,7 @@ body {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='20' y='16' width='5' height='22' rx='2.5' fill='%23EE8D0F'/%3E%3Crect x='29' y='16' width='5' height='22' rx='2.5' fill='%23EE8D0F'/%3E%3C/svg%3E");
 }
 
-#progress-container {
+.progress-container {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -109,7 +109,7 @@ body {
   transform: translateY(-100%);
   width: 100%;
 }
-#progress-container .amplitude-song-slider {
+.progress-container .amplitude-song-slider {
   position: absolute;
   width: 100%;
   opacity: 0;
@@ -117,7 +117,7 @@ body {
   height: 5px;
   margin: 0;
 }
-#progress-container #song-played-progress {
+.progress-container .song-played-progress {
   position: absolute;
   width: 100%;
   height: 5px;
@@ -125,27 +125,27 @@ body {
   appearance: none;
   transition: 0.1s ease-in-out;
 }
-#progress-container #song-played-progress::-webkit-progress-bar {
+.progress-container .song-played-progress::-webkit-progress-bar {
   background-color: transparent;
 }
-#progress-container #song-played-progress::-webkit-progress-value {
+.progress-container .song-played-progress::-webkit-progress-value {
   background-color: #ee8d0f;
   transition: 0.1s ease-in-out;
 }
-#progress-container #song-buffered-progress {
+.progress-container .song-buffered-progress {
   position: absolute;
   width: 100%;
   height: 1px;
   -webkit-appearance: none;
   appearance: none;
 }
-#progress-container #song-buffered-progress::-webkit-progress-bar {
+.progress-container .song-buffered-progress::-webkit-progress-bar {
   background-color: rgba(45, 42, 38, 0.1);
 }
-#progress-container #song-buffered-progress::-webkit-progress-value {
+.progress-container .song-buffered-progress::-webkit-progress-value {
   background-color: #ee8d0f;
 }
-#progress-container .amplitude-current-time {
+.progress-container .amplitude-current-time {
   font-family: Hancockaudiosans, sans-serif;
   font-size: 8px;
   background-color: #ece2d4;
@@ -158,7 +158,7 @@ body {
   transition: 0.1s ease-in-out;
   pointer-events: none;
 }
-#progress-container:hover .amplitude-current-time {
+.progress-container:hover .amplitude-current-time {
   opacity: 1;
 }
 
@@ -172,13 +172,13 @@ body {
 .amplitude-active-song-container .song-duration {
   color: #ee8d0f;
 }
-.amplitude-active-song-container #progress-container {
+.amplitude-active-song-container .progress-container {
   opacity: 1;
   pointer-events: unset;
 }
 
 @media (max-width: 600px) {
-  #amplitude-player {
+  .amplitude-player {
     width: 100%;
     margin-left: unset;
   }

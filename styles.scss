@@ -20,7 +20,7 @@
 body {
   margin: 0;
   padding: 6vw;
-  background: #ece2d4;
+  background: .ece2d4;
 }
 //end temp */
 //variables
@@ -28,7 +28,7 @@ $orange: #ee8d0f;
 $black: #2d2a26;
 $white: #ece2d4;
 //end variables
-#amplitude-player, #amplitude-player-2 {
+.amplitude-player {
   position: relative;
 }
 .album-art {
@@ -104,7 +104,7 @@ $white: #ece2d4;
   }
 }
 
-#progress-container {
+.progress-container {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -121,7 +121,7 @@ $white: #ece2d4;
     height: 5px;
     margin: 0;
   }
-  #song-played-progress {
+  .song-played-progress {
     position: absolute;
     width: 100%;
     height: 5px;
@@ -129,24 +129,24 @@ $white: #ece2d4;
     appearance: none;
     transition: 0.1s ease-in-out;
   }
-  #song-played-progress::-webkit-progress-bar {
+  .song-played-progress::-webkit-progress-bar {
     background-color: transparent;
   }
-  #song-played-progress::-webkit-progress-value {
+  .song-played-progress::-webkit-progress-value {
     background-color: $orange;
     transition: 0.1s ease-in-out;
   }
-  #song-buffered-progress {
+  .song-buffered-progress {
     position: absolute;
     width: 100%;
     height: 1px;
     -webkit-appearance: none;
     appearance: none;
   }
-  #song-buffered-progress::-webkit-progress-bar {
+  .song-buffered-progress::-webkit-progress-bar {
     background-color: rgba(45, 42, 38, 0.1);
   }
-  #song-buffered-progress::-webkit-progress-value {
+  .song-buffered-progress::-webkit-progress-value {
     background-color: $orange;
   }
   .amplitude-current-time {
@@ -179,14 +179,14 @@ $white: #ece2d4;
   .song-duration {
     color: $orange;
   }
-  #progress-container {
+  .progress-container {
     opacity: 1;
     pointer-events: unset;
   }
 }
 
 @media (max-width: 600px) {
-  #amplitude-player {
+  .amplitude-player {
     width: 100%;
     margin-left: unset;
   }
