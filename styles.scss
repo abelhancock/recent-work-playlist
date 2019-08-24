@@ -28,7 +28,7 @@ $orange: #ee8d0f;
 $black: #2d2a26;
 $white: #ece2d4;
 //end variables
-.amplitude-player {
+.playlist {
   position: relative;
 }
 .album-art {
@@ -186,7 +186,7 @@ $white: #ece2d4;
 }
 
 @media (max-width: 600px) {
-  .amplitude-player {
+  .playlist {
     width: 100%;
     margin-left: unset;
   }
